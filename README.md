@@ -1,8 +1,12 @@
 # VueDemo2
 
-This is my two-pint evaluation of the VueJS 2.0 stack.
+This is a followup to my two-pint evaluation of the VueJS 2.0 stack, which resulted in the building of [VueDemo1](https://github.com/DoctorBud/VueDemo1) [demo](https://doctorbud.com/VueDemo1/#/).
 
-I'm familiar with AngularJS (v1.x) and ReactJS, but my brief exposure to VueJS made me want to try to build with it and see what the latest and greatest web tooling looks like.
+I added to VueDemo1 the following:
+
+- There is a Search tab that allows for the selection and *watching* of particular coin. These watched coin are displayed on the `Watch` tab (which was hacked from the ToDo tab).
+- I used [good-table](https://github.com/xaksis/vue-good-table) to implement the search table.
+- A started using [Element](http://element.eleme.io/#/en-US) to provide some styling capability, rather than using my traditional [Bootstrap](http://getbootstrap.com).
 
 Overall, I'm very happy with VueJS and its similarity to the AngularJS 1.x that I've found very productive for the last several years. I will likely clone this project and begin a more extensive VueDemo2.
 

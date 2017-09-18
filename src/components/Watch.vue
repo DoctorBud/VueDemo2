@@ -2,8 +2,10 @@
     <section class="todoapp" v-cloak>
         <header class="header">
             <h1>Watched Coin</h1>
+<!--
             <input class="new-todo" autofocus autocomplete="off" placeholder="Enter a Coin Symbol" v-model="newWatch" @keyup.enter="addWatch">
-            <h6>Not Fully Implemented. The Search tab allows the watch state to be toggled, and this Watch tab reflects those choices. However, the All/Active/Completed tabs at the bottom are leftover from ToDo.</h6>
+ -->
+            <h6>The Search tab allows the watch state to be toggled, and this Watch tab reflects those choices. >Eventually, this Watch tab will update the prices when viewed.</h6>
         </header>
         <section class="main" v-show="watches.length">
             <input class="toggle-all" type="checkbox" v-model="allDone">
@@ -11,17 +13,21 @@
                 <li class="todo" v-for="watch in filteredWatchs" :class="{completed: watch.completed, editing: watch == editedWatch}">
                     <div class="view">
                         <input class="toggle" type="checkbox" v-model="watch.completed">
-                        <label @dblclick="editWatch(watch)">{{watch.title}}</label>
-                        <button class="destroy" @click="removeWatch(watch)"></button>
+                        <label style="overflow:auto;"><span style="float:left;">{{watch.title}} ({{watch.symbol}})</span> <span style="float:right;">$ {{watch.price_usd}}</span></label>
+                        <button style="clear:both;" class="destroy" @click="removeWatch(watch)"></button>
                     </div>
+<!--
                     <input class="edit" type="text" v-model="watch.title" v-watch-focus="watch == editedWatch" @blur="doneEdit(watch)" @keyup.enter="doneEdit(watch)" @keyup.esc="cancelEdit(watch)">
+
+ -->
                 </li>
             </ul>
         </section>
         <footer class="footer" v-show="watches.length">
             <span class="todo-count">
-                <strong v-text="remaining"></strong> {{pluralize('item', remaining)}} left
+                <strong v-text="remaining"></strong> {{pluralize('coin', remaining)}} watched
             </span>
+<!-- 
             <ul class="filters">
                 <li><a href="#/watch/all" :class="{selected: visibility == 'all'}">All</a></li>
                 <li><a href="#/watch/active" :class="{selected: visibility == 'active'}">Active</a></li>
@@ -30,10 +36,9 @@
             <button class="clear-completed" @click="removeCompleted" v-show="watches.length > remaining">
                 Clear completed
             </button>
-        </footer>
+ -->
 
-        <footer class="info">
-            <p>Double-click to edit a watch</p>
+
         </footer>
     </section>
 </template>

@@ -112,7 +112,7 @@
         let result = false;
         if (this.watches) {
           this.watches.forEach(watch => {
-            if (watch && watch.title.toUpperCase() === symbol.toUpperCase()) {
+            if (watch && watch.symbol.toUpperCase() === symbol.toUpperCase()) {
               result = true;
             }
           });
@@ -132,14 +132,16 @@
 
           if (row.watch) {
             this.watches.push({
-              title: symbol,
-              completed: false
+              title: row.name,
+              symbol: symbol,
+              price_usd: row.price_usd,
+              completed: false,
             });
           }
           else {
             for (let i = 0; i < this.watches.length; ++i) {
               const watch = this.watches[i];
-              if (watch && watch.title.toUpperCase() === symbol.toUpperCase()) {
+              if (watch && watch.symbol.toUpperCase() === symbol.toUpperCase()) {
                 this.watches.splice(i, 1);
                 break;
               }
