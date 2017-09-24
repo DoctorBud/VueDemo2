@@ -23,6 +23,7 @@
     "todomvc-common": "^1.0.4",
     "vue": "^2.4.4",
     "vue-good-table": "^1.12.6",
+    "vue-grid-layout": "^2.1.9",
     "vue-router": "^2.7.0"
   },
   "devDependencies": {
