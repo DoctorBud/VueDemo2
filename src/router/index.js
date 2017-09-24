@@ -9,6 +9,7 @@ import Search from '@/components/Search';
 import Coins from '@/components/Coins';
 import Watch from '@/components/Watch';
 import ToDos from '@/components/ToDos';
+import Grid from '@/components/Grid';
 
 Vue.use(Router);
 Vue.use(ElementUI);
@@ -35,6 +36,11 @@ const router = new Router({
             path: '/coins/:id',
             name: 'Coins',
             component: Coins,
+        },
+        {
+            path: '/grid',
+            name: 'Grid',
+            component: Grid,
         },
         {
             path: '/watch/',
